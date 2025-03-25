@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu Latest Movies</title>
+    
+    <style>
+
+.movie-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    text-align: center;
+    transition: background 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.movie-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.movie-navbar ul li {
+    display: inline;
+}
+
+.movie-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.movie-navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: red;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.movie-navbar ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.movie-navbar ul li a:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+        .container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+        .card {
+            min-width: 200px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.4);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            text-align: center;
+        }
+        .card:hover {
+            transform: scale(1.1);
+        }
+        .card img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 5px;
+        }
+        body {
+    background: linear-gradient(to bottom, #111, #222);
+    overflow-x: hidden;
+}
+
+.parallax {
+    position: relative;
+    height: 400px;
+    background: url('bg.avif') center/cover no-repeat fixed;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+.animated-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.2), rgba(255, 69, 0, 0));
+    animation: backgroundMove 10s linear infinite alternate;
+    mix-blend-mode: overlay;
+}
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <nav class="movie-navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Trailers</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+
+
+
+    <div class="movie-bg">
+        <h1 class="title">Cinematic Universe</h1>
+        <div class="geometric-container">
+            <div class="circle"></div>
+            <div class="triangle"></div>
+            <div class="square"></div>
+            <div class="hexagon"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class="container" id="movieContainer">
+        <!-- Movie cards will be inserted here -->
+    </div>
+    
+
+    <script>
+        const movies = [
+            { title: "Hanuman", image: "hanu.jpeg" },
+            { title: "Guntur Kaaram", image: "guntur.jpeg" },
+            { title: "Salaar", image: "salaar.jpeg" },
+            { title: "HiNanna", image: "hi.jpeg" },
+            { title: "Eagle", image: "eagle.jpeg" },
+            { title: "Tandel", image: "tandel.jpeg" }
+
+            
+        ];
+
+        function getRandomColor() {
+            const colors = ["#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD", "#E74C3C"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        const movieContainer = document.getElementById("movieContainer");
+
+        movies.forEach(movie => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            const img = document.createElement("img");
+            img.src = movie.image;
+            img.alt = movie.title;
+
+            const title = document.createElement("div");
+            title.classList.add("title");
+            title.textContent = movie.title;
+            title.style.color = getRandomColor();
+
+            card.appendChild(img);
+            card.appendChild(title);
+            movieContainer.appendChild(card);
+        });
+    </script>
+
+   <br>
+   <br>
+   <br>
+   <br>
+<h1 class="animated-title">
+    <span>T</span><span>E</span><span>L</span><span>U</span><span>G</span><span>U</span>
+    <span>M</span><span>O</span><span>V</span><span>I</span><span>E</span><span>S</span>
+</h1>
+<br>
+<br>
+
+<style>
+    .animated-title {
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .animated-title span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Apply delay for each letter */
+    .animated-title span:nth-child(1) { animation-delay: 0s; }
+    .animated-title span:nth-child(2) { animation-delay: 0.1s; }
+    .animated-title span:nth-child(3) { animation-delay: 0.2s; }
+    .animated-title span:nth-child(4) { animation-delay: 0.3s; }
+    .animated-title span:nth-child(5) { animation-delay: 0.4s; }
+    .animated-title span:nth-child(6) { animation-delay: 0.5s; }
+    .animated-title span:nth-child(7) { animation-delay: 0.6s; }
+    .animated-title span:nth-child(8) { animation-delay: 0.7s; }
+    .animated-title span:nth-child(9) { animation-delay: 0.8s; }
+    .animated-title span:nth-child(10) { animation-delay: 0.9s; }
+    .animated-title span:nth-child(11) { animation-delay: 1s; }
+    .animated-title span:nth-child(12) { animation-delay: 1.1s; }
+</style>
+
+<h1 class="movie-title">Cinema Awaits</h1>
+
+
+
+<div class="moving-reel">
+    🎬 Movie Magic 🎥
+</div>
+
+<style>
+@keyframes reelMove {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.moving-reel {
+    font-size: 3rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    white-space: nowrap;
+    animation: reelMove 5s linear infinite;
+}
+</style>
+
+
+<style>
+
+
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+@keyframes zoomFade {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.movie-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffcc00;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+    animation: flicker 1.5s infinite alternate, zoomFade 2s ease-in-out;
+}
+</style>
+
+
+<style>
+@keyframes spotlight {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.movie-bg {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(0,0,0,0.8) 20%, transparent 80%), 
+                url('bg1.jpeg') center/cover no-repeat;
+    animation: spotlight 6s infinite alternate linear;
+}
+
+.title {
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+</style>
+
+
+
+
+<style>
+@keyframes bg-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
+.title {
+    color: #fff;
+    font-size: 3rem;
+
+    z-index: 2;
+    position: relative;
+}
+
+.geometric-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle, .triangle, .square, .hexagon {
+    position: absolute;
+    opacity: 0.7;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.5);
+    top: 20%;
+    left: 10%;
+    animation: float 6s infinite ease-in-out alternate;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid rgba(0, 255, 0, 0.5);
+    top: 50%;
+    left: 30%;
+    animation: rotate 8s infinite linear;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 255, 0.5);
+    top: 70%;
+    left: 60%;
+    animation: pulse 5s infinite alternate;
+}
+
+.hexagon {
+    width: 100px;
+    height: 55px;
+    background: rgba(255, 255, 0, 0.5);
+    position: relative;
+    top: 30%;
+    left: 80%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: bounce 7s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+}
+</style>
+
+
+
+<div class="scroll-container">
+    <h1 class="scroll-text">Experience the Magic of Cinema</h1>
+    <h1 class="scroll-text">Lights, Camera, Action!</h1>
+    <h1 class="scroll-text">Unforgettable Movie Moments</h1>
+</div>
+
+<style>
+
+
+.scroll-container {
+    position: relative;
+    width: 100%;
+    height: 200vh; /* Scrollable area */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.scroll-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    transform: translateY(100px) translateX(-50px) rotate(-10deg);
+    transition: opacity 1s ease, transform 1.5s ease-out;
+    position: relative;
+}
+
+.scroll-text:nth-child(odd) {
+    transform: translateY(150px) translateX(50px) rotate(10deg);
+}
+
+.scroll-text.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) rotate(0deg);
+}
+</style>
+
+<script>
+document.addEventListener("scroll", function() {
+    const texts = document.querySelectorAll(".scroll-text");
+    texts.forEach(text => {
+        const rect = text.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8) {
+            text.classList.add("visible");
+        }
+    });
+});
+</script>
+
+
+
+
+</body>
+</html>
